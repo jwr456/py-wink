@@ -150,6 +150,12 @@ class Wink(object):
     def create_service(self, data):
         return self._post("/users/me/linked_services", data)
 
+    def get_groups(self):
+        return self._get("/users/me/groups")
+
+    def activate_group(self, group_id, data):
+        return self._post("/groups/{0}/activate".format(group_id), data)
+
     def get_icons(self):
         return self._get("/icons")
 
